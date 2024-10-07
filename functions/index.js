@@ -1,14 +1,14 @@
 const functions = require('firebase-functions');
 const Groq = require('groq-sdk');
 
-// Load API key from Firebase environment config
+// Load API key from Firebase environment config.
 const apiKey = functions.config().groq.api_key;
 
 if (!apiKey) {
   throw new Error('API key is missing! Ensure you have set it using Firebase CLI.');
 }
 
-// Initialize Groq client with the API key
+// Initialize Groq client with the API key.
 const client = new Groq({
   apiKey: apiKey,
 });
